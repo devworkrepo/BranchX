@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/nestedScrollview"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:backgroundTint="@color/grey_bg"
+            android:background="@color/grey_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AEPS Transaction Details"
+                android:padding="5dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_margin="0dp"
+                style="@style/TitleTextStyle"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_success"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:lottie_autoPlay="true"
+                android:layout_margin="12dp"
+                app:lottie_speed="0.8"
+                app:lottie_progress="0.8"
+                app:lottie_renderMode="software"
+                app:lottie_repeatCount="150"
+                app:lottie_repeatMode="restart"
+                app:lottie_loop="true"
+                app:lottie_fileName="lottie_success.json"
+                />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Status"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/text_color_seven"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Number"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  :  "/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="n/a"
+                        android:textColor="@color/text_color_five"
+                        android:fontFamily="@font/rubic_regular"
+                        android:textSize="16sp"
+                        android:id="@+id/tv_mobile"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/text_color_seven"
+                        android:layout_height="wrap_content"
+                        android:text="Aadhar Number"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  :  "/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="name"
+                        android:textColor="@color/text_color_five"
+                        android:fontFamily="@font/rubic_regular"
+                        android:textSize="16sp"
+                        android:id="@+id/tv_aadharNumber"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/text_color_seven"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction Amount"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  :  "/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="0.00"
+                        android:textColor="@color/text_color_five"
+                        android:fontFamily="@font/rubic_regular"
+                        android:textSize="16sp"
+                        android:id="@+id/tv_transactionAmount"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/text_color_seven"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction ID"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  :  "/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="n/a"
+                        android:textColor="@color/text_color_five"
+                        android:fontFamily="@font/rubic_regular"
+                        android:textSize="16sp"
+                        android:id="@+id/tv_transactionId"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/text_color_seven"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction Type"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  :  "/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="n/a"
+                        android:textColor="@color/text_color_five"
+                        android:fontFamily="@font/rubic_regular"
+                        android:textSize="16sp"
+                        android:id="@+id/tv_transactionType"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/text_color_seven"
+                        android:layout_height="wrap_content"
+                        android:text="Transaction Time"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  :  "/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="n/a"
+                        android:textColor="@color/text_color_five"
+                        android:fontFamily="@font/rubic_regular"
+                        android:textSize="16sp"
+                        android:id="@+id/tv_transactionTime"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/text_color_seven"
+                        android:layout_height="wrap_content"
+                        android:text="Available Balance"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="  :  "/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:text="0.00"
+                        android:textColor="@color/text_color_five"
+                        android:fontFamily="@font/rubic_regular"
+                        android:textSize="16sp"
+                        android:id="@+id/tv_availBalance"/>
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_statement"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:gravity="left"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Narration"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Txn Type"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_weight="0.3"
+                    android:layout_height="wrap_content"
+                    android:text="amount"
+                    android:gravity="right"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_height="1dp"
+                android:background="#DAD4D4"/>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_mini_statement"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

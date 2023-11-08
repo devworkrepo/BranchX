@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.branchx.agent.ui.viewmodel.dmt.SenderRegisterViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_bg"
+        >
+
+        <include layout="@layout/custom_toolbar1"
+            android:id="@+id/toolbar"/>
+
+        <ScrollView
+            android:id="@+id/contentLayout"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isScrollContainer="true"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:layout_marginTop="8dp"
+                    android:text="Register Sender" />
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:text="Sender Number"
+                    />
+
+                <EditText
+                    android:id="@+id/ed_sender_mobile_number"
+                    style="@style/customEditText"
+                    android:textColorHint="@color/white70"
+                    android:hint="Required*"
+                    android:enabled="false"
+                    android:inputType="number"
+                    android:text="@={viewModel.senderMobileNumber}"
+                    android:maxLength="10" />
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:text="Sender First Name"
+                    />
+
+                <EditText
+                    android:id="@+id/ed_sender_first_name"
+                    style="@style/customEditText"
+                    android:textColorHint="@color/white70"
+                    android:hint="Required*"
+                    android:text="@={viewModel.senderFirstName}"
+                     />
+
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:text="Sender Last Name"
+                    />
+
+                <EditText
+                    android:id="@+id/ed_sender_name"
+                    style="@style/customEditText"
+                    android:textColorHint="@color/white70"
+                    android:hint="Required*"
+                    android:text="@={viewModel.senderLastName}"
+                    />
+
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_error_message"
+                    style="@style/ValidationErrorStyle"
+                    android:visibility="@{viewModel.errMessageObs == `` ? View.GONE : View.VISIBLE}"
+                    android:text="@{viewModel.errMessageObs}"/>
+
+                <Button
+                    android:id="@+id/btn_add_beneficiary"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_background"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:textSize="16sp"
+                    app:backgroundTint="@color/button_bg"
+                    app:cornerRadius="30dp"
+                    android:onClick="@{viewModel::onSubmitButtonClick}"
+                    android:text="Add Beneficiary" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</layout>

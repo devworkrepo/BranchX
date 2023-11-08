@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="purple_200">#0C4CB6</color>
+    <color name="purple_500">#08398a</color>
+    <color name="purple_700">#062C6A</color>
+    <color name="teal_200">#4C8DB5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="splash_text">#475F7B</color>
+    <color name="splash_bg">#F1FDFF</color>
+    <color name="light_bg">#E3EFF4</color>
+    <color name="text_color">#2A4D63</color>
+    <color name="boxtextinside_color">#4C8DB5</color>
+    <color name="register_bg_color">#F2F2F2</color>
+    <color name="green_color">#4CAF50</color>
+    <color name="btn_color">#2A4D63</color>
+    <color name="star_color">#FF0034</color>
+    <color name="validation_error">#4FF83412</color>
+    <color name="black_color">#000000</color>
+    <color name="user_detail_text_color">#333333</color>
+
+    <color name="text_color_1">#323030</color>
+    <color name="text_color_2">#057EB5</color>
+    <color name="text_color_seven">#777777</color>
+    <color name="text_color_five">#555555</color>
+    <color name="text_color_3">#2196F3</color>
+    <color name="item_text_color">#A9100F0F</color>
+
+    <!--black color-->
+    <color name="black">#000000</color>
+    <color name="black5">#0d0d0d</color>
+    <color name="black10">#1a1a1a</color>
+    <color name="black15">#262626</color>
+    <color name="black20">#333333</color>
+    <color name="black25">#404040</color>
+    <color name="black30">#4d4d4d</color>
+    <color name="black_transaction_transparent">#66000000</color>
+
+    <!--white color-->
+    <color name="white">#ffffff</color>
+    <color name="white95">#f2f2f2</color>
+    <color name="white90">#e6e6e6</color>
+    <color name="white85">#d9d9d9</color>
+    <color name="white80">#cccccc</color>
+    <color name="white75">#bfbfbf</color>
+    <color name="white70">#b3b3b3</color>
+
+    <color name="red">#F44336</color>
+    <color name="darkRed">#CF2519</color>
+    <color name="red2">#F6E3E1</color>
+    <color name="yellow">#FF9800</color>
+    <color name="yellow2">#FAF4EC</color>
+    <color name="green">#4CAF50</color>
+    <color name="green2">#E5F6E5</color>
+
+    <color name="underline_color">#B1BAC4</color>
+
+
+    <color name="tab_bg_color">#084A6E</color>
+    <color name="bottom_bar_color">#33779C</color>
+
+    <color name="bg_expanded">#D8EDF5F8</color>
+
+    <color name="toolbar_title_color">#5FD5E1</color>
+
+    <color name="title_color">#5F9CA1</color>
+    <color name="subtitle_color">#CAF0F6</color>
+
+    <color name="filter_pill_color">#297195</color>
+
+    <color name="filter_seek_bar_color">#1C6690</color>
+    <color name="filter_seek_bar_selected_color">#359CBA</color>
+
+    <color name="filter_icon_color">#89AFC2</color>
+    <color name="filter_icon_active_color">@android:color/white</color>
+
+    <color name="list_item_fg">#aa7CDDE7</color>
+
+    <color name="tab_unselected_color">#356E8C</color>
+    <color name="tab_selected_color">@android:color/white</color>
+    <color name="background_color">#ECF9FF</color>
+    <color name="background_color2">#289DD1</color>
+
+    <color name="button_bg">#1C0E59</color>
+    <color name="grey_bg">#ECECEC</color>
+    <color name="blue_text">#80A0FF</color>
+    <color name="dark_color">#29404040</color>
+    <color name="light_grey_bg">#FBFBFB</color>
+    <color name="primaryTextColor">#404040</color>
+    <color name="hyperlink_color">#0000EE</color>
+    <color name="pink_text">#FF808D</color>
+
+
+
+    <color name="colorAccent">#F44336</color>
+    <color name="colorTextPrimary">#212121</color>
+    <color name="colorTextSecondary">#757575</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="colorGreen">#23D92A</color>
+
+
+</resources>

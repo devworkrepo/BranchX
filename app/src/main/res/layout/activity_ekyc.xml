@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/scrollView"
+            android:fillViewport="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_bg"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/cv_step_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:contentPadding="16dp"
+                        android:background="@color/grey_bg"
+                        android:backgroundTint="@color/grey_bg"
+                        android:elevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            >
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:text="Step 1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black" />
+
+                            <RelativeLayout
+                                android:layout_marginTop="16dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/til_device_serial_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Device Serial Number"
+
+                                    android:visibility="visible"
+                                    app:startIconDrawable="@drawable/ic_baseline_input_24">
+
+                                    <com.google.android.material.textfield.TextInputEditText
+                                        android:id="@+id/ed_device_serial_number"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@android:color/transparent"
+                                        android:inputType="text"
+                                        android:paddingStart="0dp"
+                                        android:singleLine="true"
+                                        android:textStyle="normal" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                                <com.google.android.material.button.MaterialButton
+                                    style="@style/ButtonPrimary"
+                                    android:id="@+id/btn_send_otp"
+                                    android:layout_height="42dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Send OTP"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true" />
+                            </RelativeLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_otp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Enter OTP"
+                                android:layout_marginTop="16dp"
+                                app:startIconDrawable="@drawable/ic_baseline_input_24">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_otp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:inputType="text"
+                                    android:paddingStart="0dp"
+                                    android:singleLine="true"
+                                    android:maxLength="7"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="normal" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:id="@+id/cv_step_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:contentPadding="16dp"
+                        android:backgroundTint="@color/grey_bg"
+                        android:elevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:text="Step 2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/black" />
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_bank_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Select Bank"
+                                android:layout_marginTop="16dp"
+                                android:visibility="visible"
+                                app:startIconDrawable="@drawable/ic_baseline_input_24">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_bank_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:inputType="text"
+                                    android:paddingStart="0dp"
+                                    android:clickable="true"
+                                    android:focusable="false"
+                                    android:singleLine="true"
+                                    android:textStyle="normal" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/til_aadhar_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Aadhaar Number"
+                                android:layout_marginTop="16dp"
+                                android:visibility="visible"
+                                app:startIconDrawable="@drawable/ic_baseline_input_24">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/ed_aadhar_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:inputType="number"
+                                    android:paddingStart="0dp"
+                                    android:singleLine="true"
+                                    android:maxLength="12"
+                                    android:layout_marginBottom="10dp"
+                                    android:textStyle="normal" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_proceed"
+                    style="@style/ButtonPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:text="Proceed"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/button_bg"
+                    android:background="@drawable/rounded_background"
+                    app:cornerRadius="0dp" />
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:background="@color/grey_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+
+            android:layout_marginBottom="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp">
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grey_bg"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentPadding="16dp"
+                    android:backgroundTint="@color/grey_bg"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:textStyle="bold"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available Balance"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textSize="16dp"
+                            android:textColor="@color/primaryTextColor"
+                            />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+
+                                android:src="@drawable/ic_fingerprint"
+                                app:tint="@color/purple_700">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:text="(AEPS)  :"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/green_color"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/tv_aeps_balance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/purple_700"
+                                android:textStyle="bold"
+                                tools:text="5900">
+
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="5dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+
+                                android:src="@drawable/atm"
+                                app:tint="@color/purple_700">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:text="(MATM) :"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/green_color"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/tv_matm_balance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:textColor="@color/purple_700"
+                                android:textStyle="bold"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                tools:text="5900">
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:cardCornerRadius="5dp"
+                    app:contentPadding="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:textStyle="bold"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp"
+                            android:textColor="@color/primaryTextColor"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:text="Transaction Amount"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_amount"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Amount"
+                            android:layout_marginTop="8dp"
+                            tools:visibility="visible">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/ed_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="72dp"
+                                android:drawableLeft="@drawable/rupee_indian_24"
+                                android:drawablePadding="8dp"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:text=""
+                                android:maxLength="7"
+                                android:textColor="@color/primaryTextColor"
+                                android:background="@drawable/rounded_background"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:contentPadding="16dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/grey_bg">
+                        <TextView
+                            android:textStyle="bold"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wallet Type"
+                            android:textSize="14dp"
+                            android:textColor="@color/primaryTextColor"
+                            android:fontFamily="@font/noto_sans_regular"/>
+
+                        <RadioGroup
+                            android:id="@+id/rg_wallet_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:id="@+id/rb_aeps1"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:layout_height="wrap_content"
+                                android:text="AEPS 1"/>
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:id="@+id/rb_aeps2"
+                                android:visibility="gone"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:layout_height="wrap_content"
+                                android:text="AEPS 2"/>
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:id="@+id/rb_matm"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:layout_height="wrap_content"
+                                android:text="M-ATM"/>
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="5dp"
+                    app:contentPadding="16dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/grey_bg">
+                        <TextView
+                            android:textStyle="bold"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/primaryTextColor"
+                            android:text="Transfer Type"/>
+
+                        <RadioGroup
+                            android:id="@+id/rg_transfer_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:id="@+id/rb_bank_direct"
+                                android:layout_height="wrap_content"
+                                android:text="Bank Direct"/>
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:visibility="gone"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:id="@+id/rb_bank_manual"
+                                android:layout_height="wrap_content"
+                                android:text="Bank\nManual"/>
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:id="@+id/rb_wallet_manual"
+                                android:layout_height="wrap_content"
+                                android:text="Wallet Manual"/>
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="5dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:contentPadding="16dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/grey_bg">
+                        <TextView
+                            android:textStyle="bold"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Transfer Mode"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/primaryTextColor"
+                            />
+
+                        <RadioGroup
+                            android:id="@+id/rg_transfer_mode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:id="@+id/rb_imps"
+                                android:checked="true"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:layout_height="wrap_content"
+                                android:text="IMPS"/>
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:id="@+id/rb_neft"
+                                android:visibility="gone"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:layout_height="wrap_content"
+                                android:text="NEFT"/>
+
+
+                        </RadioGroup>
+
+                    </LinearLayout>
+
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <Button
+                    android:id="@+id/btn_proceed"
+                    style="@style/ButtonGreen"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/rounded_background"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Proceed" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</layout>

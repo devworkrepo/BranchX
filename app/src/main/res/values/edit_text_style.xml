@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EditTextPrimary" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/btn_round</item>
+        <item name="android:textColorHint">@color/white70</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">8dp
+        </item>
+        <item name="android:hint">Required*</item>
+
+    </style>
+
+    <style name="EditTextPrimaryAmount" parent="EditTextPrimary">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:hint">00</item>
+        <item name="android:inputType">number</item>
+
+
+    </style>
+
+    <style name="EditText_55" parent="EditTextPrimary">
+        <item name="android:layout_height">55dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:hint">00</item>
+        <item name="android:inputType">number</item>
+
+
+    </style>
+
+    <!--EditText styles-->
+
+    <style name="AppTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+
+    </style>
+
+    <style name="customEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/rounded_background</item>
+        <item name="android:textColorHint">@color/text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">8dp</item>
+
+
+    </style>
+</resources>

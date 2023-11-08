@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.branchx.agent.ui.viewmodel.dmt.SenderRegisterOtpViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_bg"
+        >
+
+        <include layout="@layout/custom_toolbar1"
+            android:id="@+id/toolbar"/>
+
+        <ScrollView
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:isScrollContainer="true"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:layout_marginTop="8dp"
+                    android:text="Register Sender Otp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tv_response_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    tools:text="Otp has been sent to sender mobile number" />
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:layout_marginTop="24dp"
+                    android:text="Enter OTP" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/rounded_background">
+
+
+                    <EditText
+                        android:id="@+id/ed_sender_mobile_number"
+                        style="@style/EditTextPrimary"
+                        android:layout_height="52dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@android:color/transparent"
+                        android:hint="****"
+                        android:paddingStart="6dp"
+                        android:inputType="numberPassword"
+                        android:maxLength="4"
+                        android:text="@={viewModel.otp}" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:textAllCaps="false"
+                        android:id="@+id/btn_resend_otp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:backgroundTint="@color/button_bg"
+                        android:textColor="@color/white"
+                        android:background="@drawable/rounded_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Resend" />
+
+                </RelativeLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_error_message"
+                    style="@style/ValidationErrorStyle"
+                    android:text="@{viewModel.errMessageObs}"
+                    android:visibility="@{viewModel.errMessageObs == `` ? View.GONE : View.VISIBLE}" />
+
+                <Button
+                    android:id="@+id/btn_add_beneficiary"
+                    style="@style/ButtonPrimary"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:backgroundTint="@color/button_bg"
+                    android:background="@drawable/rounded_background"
+                    android:onClick="@{viewModel::onSubmitButtonClick}"
+                    android:text="@string/submit" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+</layout>

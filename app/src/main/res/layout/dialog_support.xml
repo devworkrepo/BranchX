@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="5dp"
+    app:contentPadding="16dp"
+    android:backgroundTint="@color/grey_bg"
+    android:id="@+id/card_view">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="branchX Support!"
+            android:fontFamily="@font/noto_sans_regular"
+            android:gravity="center"
+            android:textColor="@color/button_bg"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="0dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:drawableTint="@color/black"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/noto_sans_regular"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:text="+91-9761111646 / 47"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:drawableTint="@color/black"
+            android:drawablePadding="8dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:text="care@branchx.in"/>
+
+        <Button
+            android:id="@+id/btn_done"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_background"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:text="Done"/>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

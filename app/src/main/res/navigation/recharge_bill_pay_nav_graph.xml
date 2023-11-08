@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recharge_nav_graph"
+    app:startDestination="@id/providerFragment">
+
+
+    <fragment
+        android:id="@+id/providerFragment"
+        tools:layout="@layout/fragment_provider"
+        android:name="com.branchx.agent.ui.fragment.bill_recharge.ProviderFragment"
+        android:label="ProviderFragment" >
+        <action
+            android:id="@+id/action_providerFragment_to_rechargeFragment"
+            app:destination="@id/rechargeFragment" />
+        <action
+            android:id="@+id/action_providerFragment_to_billPaymentFragment"
+            app:destination="@id/billPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rechargeFragment"
+        tools:layout="@layout/fragment_recharge"
+        android:name="com.branchx.agent.ui.fragment.bill_recharge.RechargeFragment"
+        android:label="RechargeFragment" >
+
+        <argument
+            android:name="provider_key"
+            app:argType="com.branchx.agent.data.model.Provider"/>
+
+        <action
+            android:id="@+id/action_rechargeFragment_to_rechargePaymentResponseFragment"
+            app:destination="@id/bill_recharge_SuccessFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/billPaymentFragment"
+        tools:layout="@layout/fragment_bill_pay"
+        android:name="com.branchx.agent.ui.fragment.bill_recharge.BillPayFragment"
+        android:label="BillPaymentFragment" >
+
+        <action
+            android:id="@+id/action_billPaymentFragment_to_rechargeSuccessFragment"
+            app:destination="@id/bill_recharge_SuccessFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/bill_recharge_SuccessFragment"
+        tools:layout="@layout/bill_recharge_response_fragment"
+        android:name="com.branchx.agent.ui.fragment.bill_recharge.RechargeBillResponseFragment"
+        android:label="Recharge Bill Response" >
+
+    </fragment>
+</navigation>

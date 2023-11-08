@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_bg"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tv_register"
+                style="@style/TextTitle"
+                android:gravity="center"
+                android:text="Registration"
+                android:textSize="32sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:elevation="5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/eMobileNo"
+                        style="@style/EditTextPrimary"
+                        android:hint="Enter Full Name"
+                        android:inputType="textPersonName" />
+
+                    <EditText
+                        android:id="@+id/editTextMobile"
+                        style="@style/EditTextPrimary"
+                        android:hint="Enter Your Mobile Number"
+                        android:inputType="number"
+                        android:maxLength="10" />
+
+                    <EditText
+                        android:id="@+id/editTextAddiMobile"
+                        style="@style/EditTextPrimary"
+                        android:hint="Alternative Mobile Number"
+                        android:inputType="phone"
+                        android:maxLength="10" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_country"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_round"
+                            android:padding="12dp"
+                            android:text="Select Country"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:drawableEndCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_state"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_round"
+                            android:padding="12dp"
+                            android:text="Select State"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:drawableEndCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/tv_city"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/btn_round"
+                            android:padding="12dp"
+                            android:text="Select City"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:drawableEndCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/et_address"
+                        style="@style/EditTextPrimary"
+                        android:hint="Enter Address" />
+
+                    <EditText
+                        android:id="@+id/editTextPincode"
+                        style="@style/EditTextPrimary"
+                        android:hint="Enter Pincode"
+                        android:inputType="number"
+                        android:maxLength="6" />
+
+                    <EditText
+                        android:id="@+id/et_gst"
+                        style="@style/EditTextPrimary"
+                        android:hint="Enter Gst Number" />
+
+                    <EditText
+                        android:id="@+id/et_addhar"
+                        style="@style/EditTextPrimary"
+                        android:hint="Enter Addhar Card Number"
+                        android:inputType="number" />
+
+                    <EditText
+                        android:id="@+id/et_pan"
+                        style="@style/EditTextPrimary"
+                        android:hint="Enter Pan Card Number" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:elevation="5dp"
+                            app:cardElevation="5dp">
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_aadhaar_front_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="4dp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_aadhaar_front"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="140dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_baseline_image_24" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="Front Aadhaar Image"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="12sp"
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <View
+                            android:layout_width="16dp"
+                            android:layout_height="1dp" />
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:elevation="5dp"
+                            app:cardElevation="5dp">
+
+                            <LinearLayout
+                                android:id="@+id/ll_aadhaar_back_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="4dp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_aadhaar_back"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="140dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_baseline_image_24" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="Back Aadhaar Image"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="12sp"
+
+                                    android:textStyle="normal" />
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:elevation="5dp"
+                            app:cardElevation="5dp">
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_pan_card_image"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="4dp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_pan_card"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="140dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_baseline_image_24" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="Pan Card Image"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="12sp"
+
+                                    android:textStyle="normal" />
+
+
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                        <View
+                            android:layout_width="16dp"
+                            android:layout_height="1dp" />
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:elevation="5dp"
+                            app:cardElevation="5dp">
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_profile_pic"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="4dp">
+
+
+                                <ImageView
+                                    android:id="@+id/iv_user_profile"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="140dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:src="@drawable/ic_baseline_image_24" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:text="Profile Pic"
+                                    android:textColor="@color/text_color"
+                                    android:textSize="12sp"
+                                    android:textStyle="normal" />
+
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                    </LinearLayout>
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="18dp"
+                        android:backgroundTint="@color/purple_200"
+                        android:hint="Sign Up"
+                        android:textColorHint="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="0dp" />
+
+                    <TextView
+                        android:id="@+id/tv_already_account"
+                        style="@style/TextTitle"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Already Have An Account Sign In"
+                        android:textSize="18sp" />
+
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

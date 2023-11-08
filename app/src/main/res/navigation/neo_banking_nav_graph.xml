@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/neo_banking_nav_graph"
+    app:startDestination="@id/enterDetailsFragment">
+
+    <fragment
+        android:id="@+id/enterDetailsFragment"
+        android:name="com.branchx.agent.ui.fragment.neo_banking.EnterDetailsFragment"
+        android:label="fragment_enter_details"
+        tools:layout="@layout/fragment_enter_details">
+        <action
+            android:id="@+id/action_enterDetailsFragment_to_neoBankingOtpFragment"
+            app:destination="@id/neoBankingOtpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/neoTopUpFragment"
+        android:name="com.branchx.agent.ui.fragment.neo_banking.NeoTopUpFragment"
+        android:label="fragment_neo_top_up"
+        tools:layout="@layout/fragment_neo_top_up" >
+        <action
+            android:id="@+id/action_neoTopUpFragment_to_neoTransferResponseFragment"
+            app:destination="@id/neoTransferResponseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/neoBankingOtpFragment"
+        android:name="com.branchx.agent.ui.fragment.neo_banking.NeoBankingOtpFragment"
+        android:label="fragment_neo_banking_otp"
+        tools:layout="@layout/fragment_neo_banking_otp" >
+        <action
+            android:id="@+id/action_neoBankingOtpFragment_to_neoTopUpFragment"
+            app:destination="@id/neoTopUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/neoTransferResponseFragment"
+        android:name="com.branchx.agent.ui.fragment.neo_banking.NeoTransferResponseFragment"
+        android:label="NeoTransferResponseFragment" >
+        <argument
+            android:name="neoBankingResponse"
+            app:argType="com.branchx.agent.data.response.NeoBankingResponse" />
+        <argument android:name="amount"
+            app:argType="string"/>
+    </fragment>
+
+</navigation>

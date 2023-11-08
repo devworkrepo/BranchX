@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_status"
+        style="@style/ButtonPrimary"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:background="@color/button_bg"
+        android:gravity="center"
+        android:text="@string/pending"
+        android:textSize="22sp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_home"
+        android:layout_below="@id/tv_status"
+        android:background="@color/grey_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_transaction_status"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="lottie_pending.json"
+                app:lottie_loop="true"
+                app:lottie_progress="0.8"
+                app:lottie_renderMode="software"
+                app:lottie_repeatCount="@integer/config_navAnimTime"
+                app:lottie_repeatMode="restart"
+                app:lottie_speed="0.8" />
+
+            <TextView
+                android:id="@+id/tv_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubic_medium"
+                android:gravity="start"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:textAllCaps="false"
+                android:textAppearance="@style/ShapeAppearance.MaterialComponents.SmallComponent"
+                android:textColor="@color/green"
+                android:textSize="18sp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:text="Top up successful." />
+
+            <TextView
+                android:id="@+id/tv_title_recharge_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/noto_sans_regular"
+                android:text="Transaction Details"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/grey_bg"
+                android:elevation="0dp"
+                app:cardCornerRadius="0dp"
+                app:contentPadding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/ReportListStyleLeft"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:text="Beneficiary Name"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView style="@style/ReportListStyleCenterDot" />
+
+                        <TextView
+                            android:id="@+id/tv_beneficiary_name"
+                            style="@style/ReportListStyleRight"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:maxLines="1"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="Tridev" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_account_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/ReportListStyleLeft"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:text="Account Number"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView style="@style/ReportListStyleCenterDot" />
+
+                        <TextView
+                            android:id="@+id/tv_account_number"
+                            style="@style/ReportListStyleRight"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="1223434300" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_bank_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/ReportListStyleLeft"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:text="Bank Name"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView style="@style/ReportListStyleCenterDot" />
+
+                        <TextView
+                            android:id="@+id/tv_bank_name"
+                            style="@style/ReportListStyleRight"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="State Bank of India" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+
+                        <TextView
+                            style="@style/ReportListStyleLeft"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:text="Amount"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView style="@style/ReportListStyleCenterDot" />
+
+                        <TextView
+                            android:id="@+id/tv_amount"
+                            style="@style/ReportListStyleRight"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            tools:text="₹ 5000" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </soup.neumorphism.NeumorphCardView>
+            <!--<TextView
+                android:layout_marginTop="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Response Details"
+                android:textStyle="bold"
+                android:fontFamily="@font/noto_sans_regular"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="16sp" />
+            <soup.neumorphism.NeumorphCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="0dp"
+                android:backgroundTint="@color/grey_bg"
+                app:cardCornerRadius="0dp"
+                android:layout_marginTop="16dp"
+                app:contentPadding="8dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="left"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/button_bg"
+                            android:text="GST"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/button_bg"
+                            android:text="Charges"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/button_bg"
+                            android:text="Amount"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textColor="@color/button_bg"
+                            android:text="Status"
+                            android:textSize="12sp" />
+
+
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+
+
+                </LinearLayout>
+            </soup.neumorphism.NeumorphCardView>-->
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/ll_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/button_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_home_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="@font/noto_sans_regular"
+            android:gravity="center"
+            android:text="Home"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.branchx.agent.ui.viewmodel.FundRequestViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/grey_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <include
+            android:id="@+id/progress"
+            layout="@layout/circular_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+
+            android:layout_marginBottom="36dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp">
+
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/cv_confirm_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@color/grey_bg">
+
+
+                    <TextView
+                        style="@style/TextViewInputHeader"
+                        android:text="Payment To" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_background">
+
+                        <Spinner
+                            android:id="@+id/spn_request_to"
+                            style="@style/SpinnerTextViewItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:gravity="start|center_vertical"
+                            android:paddingStart="10dp"
+                            android:autofillHints="Select Item"
+                            android:textColor="@color/text_color_1" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        style="@style/TextViewInputHeader"
+                        android:text="Payment Mode" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_background">
+
+                        <Spinner
+                            android:id="@+id/spn_request_type"
+                            style="@style/SpinnerTextViewItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:gravity="start|center_vertical"
+                            android:paddingStart="10dp"
+                            android:textColor="@color/text_color_1" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        style="@style/TextViewInputHeader"
+                        android:text="Payment Date" />
+
+                    <EditText
+                        android:id="@+id/ed_payment_date"
+                        style="@style/customEditText"
+                        android:textColorHint="@color/white70"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:hint="Select Payment Date" />
+
+
+                    <TextView
+                        style="@style/TextViewInputHeader"
+                        android:text="Select Bank" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_background">
+
+                        <Spinner
+                            android:id="@+id/spn_bank_type"
+                            style="@style/SpinnerTextViewItem"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:gravity="start|center_vertical"
+                            android:paddingStart="10dp"
+                            android:textColor="@color/text_color_1" />
+                    </LinearLayout>
+<!--                    <EditText-->
+<!--                        android:id="@+id/ed_bank"-->
+<!--                        style="@style/customEditText"-->
+<!--                        android:textColorHint="@color/white70"-->
+<!--                        android:clickable="false"-->
+<!--                        android:focusable="false"-->
+<!--                        android:hint="Select Bank" />-->
+
+                    <TextView
+                        android:id="@+id/tv_field_one_header"
+                        style="@style/TextViewInputHeader"
+                        tools:text="Field Two" />
+
+                    <EditText
+                        android:id="@+id/ed_field_one"
+                        style="@style/customEditText"
+                        android:hint="Required*"
+                        android:textColorHint="@color/white70"
+                        android:text="@={viewModel.extraFieldOne}" />
+
+                    <TextView
+                        android:id="@+id/tv_field_two_header"
+                        style="@style/TextViewInputHeader"
+                        tools:text="Field Two" />
+
+                    <EditText
+                        android:id="@+id/ed_field_two"
+                        style="@style/customEditText"
+                        android:hint="Required*"
+                        android:textColorHint="@color/white70"
+                        android:text="@={viewModel.extraFieldTwo}" />
+
+
+                    <TextView
+                        style="@style/TextViewInputHeader"
+                        android:text="Amount" />
+
+                    <EditText
+                        android:id="@+id/ed_amount"
+                        style="@style/customEditText"
+                        android:hint="Required*"
+                        android:textColorHint="@color/white70"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:text="@={viewModel.amount}"
+                         />
+
+                    <TextView
+                        style="@style/TextViewInputHeader"
+                        android:text="Select File" />
+
+                    <EditText
+                        android:id="@+id/ed_file"
+                        style="@style/customEditText"
+                        android:textColorHint="@color/white70"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:hint="Select image file (optional)"
+                       />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_error_message"
+                        style="@style/ValidationErrorStyle"
+                        android:text="@{viewModel.errMessageObs}"
+                        android:visibility="@{viewModel.errMessageObs == `` ? View.GONE : View.VISIBLE}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:paddingBottom="10dp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/btn_make_request"
+                            style="@style/ButtonGreen"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:text="Make Request" />
+
+
+                        <Button
+                            android:id="@+id/btn_cancel"
+                            style="@style/ButtonRed"
+                            android:layout_width="0dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_weight="1"
+                            android:text="Cancel" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+</layout>

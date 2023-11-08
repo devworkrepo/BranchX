@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/rounded_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+             <ImageView
+                android:gravity="center"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                 android:layout_weight="0.1"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/plus_edit"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:gravity="center"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:layout_weight="0.1"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/edit_icon"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:gravity="center"
+                android:layout_marginLeft="45dp"
+                android:text="01"
+                android:fontFamily="@font/noto_sans_regular"
+                android:textColor="@color/user_detail_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:gravity="center"
+                android:text="Megha"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1.2"
+                android:layout_marginLeft="60dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/noto_sans_regular"
+                android:textColor="@color/user_detail_text_color"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:gravity="center"
+                android:text="Noida"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_weight="1.2"
+                android:textSize="14sp"
+                android:fontFamily="@font/noto_sans_regular"
+                android:layout_marginLeft="35dp"
+                android:textColor="@color/user_detail_text_color"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:gravity="center"
+                android:layout_height="15dp"
+                android:layout_width="15dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/blue_arrow"
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+        </LinearLayout>

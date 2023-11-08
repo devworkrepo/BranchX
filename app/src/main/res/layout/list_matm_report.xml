@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.branchx.agent.data.model.report.MatmReport" />
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="@color/grey_bg"
+        android:layout_marginBottom="4dp"
+        app:contentPadding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="8dp"
+                    android:background="@drawable/bg_cirlce_white_grey_border"
+                    android:layout_gravity="center"
+                    android:src="@drawable/atm"
+                    app:tint="@color/white" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="Card No:  3618506719"
+                        android:textSize="14dp"
+                        android:textStyle="bold"
+                        android:text="@{`Card No :  `+item.cardNumber}"
+                        android:textColor="@color/black" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        tools:text="Bank"
+                        android:textSize="12dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:text="@{item.bankName}"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="12-11-2017 11:21:23"
+                        android:text="@{item.date}"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        tools:text="₹ 5000"
+                        android:text="@{`₹ `+item.amount}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/success"
+                            android:textSize="12dp"
+                            android:textColor="@color/primaryTextColor"
+                            android:text="@{item.status}"
+                            />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_content_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                tools:visibility="visible"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:text="Transaction Id" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="id"
+                        android:text="@{item.id}"
+                      />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:text="Transction Type" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="Transaction Type"
+                        android:text="@{item.transactionType}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:text="Mobile No." />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="Mobile Number"
+                        android:text="@{item.customerNumber}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:text="Customer Name" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="Customer name"
+                        android:text="@{item.customerName}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:text="Operator Id" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="Customer name"
+                        android:text="@{item.operatorId}"
+                        />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:text="Api Message" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/TransactionSummaryStyle"
+                        android:fontFamily="@font/noto_sans_regular"
+                        tools:text="message"
+                        android:text="@{item.message}"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

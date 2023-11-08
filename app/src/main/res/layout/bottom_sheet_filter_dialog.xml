@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    android:background="@color/grey_bg"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/grey_bg"
+            android:background="@drawable/rounded_background"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="Filter" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_baseline_filter_list_24"
+                    app:tint="@color/black" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/black5"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="32dp"
+                android:orientation="vertical">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_from_date"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:clickable="true"
+                        android:hint="Start Date"
+                        android:padding="16dp"
+                        android:textColorHint="@color/white70"
+                        android:focusable="false"
+                        android:background="@drawable/rounded_background"
+                        android:inputType="date" />
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_to_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:padding="16dp"
+                        android:background="@drawable/rounded_background"
+                        android:layout_marginTop="16dp"
+                        android:inputType="date"
+                        android:hint="End Date"
+                        android:textColor="@color/white70"
+                        app:boxStrokeColor="@color/purple_500" />
+
+                <LinearLayout
+                    android:id="@+id/ll_search"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/rounded_background"
+                    android:padding="12dp"
+                    android:backgroundTint="@color/button_bg"
+                    android:minWidth="200dp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+
+                        android:src="@drawable/ic_search_black_36dp"
+                        app:tint="@color/white" />
+
+                    <View
+                        android:layout_width="8dp"
+                        android:layout_height="1dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+

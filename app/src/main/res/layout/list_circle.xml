@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/grey_bg">
+
+    <data>
+        <variable
+            name="item"
+            type="com.branchx.agent.data.response.Circle" />
+    </data>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_margin="8dp"
+      android:id="@+id/ll_main_layout"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+      <TextView
+          android:id="@+id/tv_provider"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="16sp"
+          android:textColor="@color/button_bg"
+          android:textStyle="bold"
+          tools:text="Provider"
+          android:background="@color/white"
+          android:padding="8dp"
+          android:text="@{item.stateName}"/>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1.2dp"
+          android:background="@color/primaryTextColor"/>
+  </LinearLayout>
+
+</layout>

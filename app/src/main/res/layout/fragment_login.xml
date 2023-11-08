@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.branchx.agent.ui.viewmodel.auth.LoginViewModel"/>
+    </data>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/background"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="24dp"
+                    android:backgroundTint="@color/grey_bg"
+                    android:background="@color/underline_color"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="16dp"
+                    app:contentPadding="16dp">
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="160dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/branchx_logo_black" />
+
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/ed_mobile_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:padding="16sp"
+                                android:drawablePadding="10dp"
+                                android:drawableLeft="@drawable/ic_baseline_phone_android_24"
+                                android:hint="Enter Mobile Number"
+                                android:singleLine="true"
+                                style="@style/customEditText"
+                                android:text="@={viewModel.mobileNumber}"
+                                android:textStyle="normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_background"
+                    android:orientation="horizontal"
+                    >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/ed_password"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPassword"
+                                android:padding="16sp"
+                                android:drawablePadding="10dp"
+                                style="@style/customEditText"
+                                android:layout_marginBottom="0dp"
+                                android:singleLine="true"
+                                android:maxLength="21"
+                                android:hint="Password"
+                                android:drawableLeft="@drawable/ic_baseline_lock_24"
+                                android:fontFamily="@font/rubic_regular"
+                                android:text="@={viewModel.password}"
+                                android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/hideShowPassword_Iv_La"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/eye"
+            />
+
+
+
+                        <!--                        <ImageView-->
+<!--                           android:id="@+id/hideShow"-->
+<!--                            android:layout_width="20sp"-->
+<!--                            android:layout_height="20sp"-->
+<!--                            android:layout_marginEnd="10sp"-->
+<!--                            android:src="@drawable/eye"-->
+<!--                            app:layout_constraintBottom_toBottomOf="@+id/ed_password"-->
+<!--                            app:layout_constraintEnd_toEndOf="@+id/ed_password"-->
+<!--                            app:layout_constraintTop_toTopOf="@+id/ed_password" />-->
+
+                </LinearLayout>
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_error_message"
+                            style="@style/ValidationErrorStyle"
+                            android:text="@{viewModel.errMessageObs}"
+                            android:visibility="@{viewModel.errMessageObs == `` ? View.GONE : View.VISIBLE}" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/cb_remember"
+                               android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="12dp"
+                                android:textColor="@color/primaryTextColor"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:checked="@={viewModel.loginCheck}"
+                                android:text="@string/keep_me_login" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_forgetPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:gravity="right"
+                                android:layout_alignParentRight="true"
+                                android:onClick="@{viewModel::onForgotPasswordClick}"
+                                android:text="Forgot Password"
+                                android:textAllCaps="false"
+                                android:textColor="@color/red" />
+
+                        </LinearLayout>
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/cb_remember"-->
+<!--                            style="@style/CheckBoxPrimary"-->
+<!--                            android:checked="@={viewModel.loginCheck}"-->
+<!--                            android:text="@string/keep_me_login" />-->
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_login"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="32dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/rounded_background"
+                            android:insetTop="0dp"
+                            android:insetBottom="0dp"
+                            android:onClick="@{viewModel::onLoginClick}"
+                            android:text="Login"
+                            android:textSize="20sp"
+                            app:backgroundTint="@color/button_bg"
+                            app:cornerRadius="30dp" />
+
+
+<!--                        <com.google.android.material.button.MaterialButton-->
+<!--                            android:id="@+id/btn_forgetPassword"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:background="@android:color/transparent"-->
+<!--                            android:gravity="center_vertical|end"-->
+<!--                            android:onClick="@{viewModel::onForgotPasswordClick}"-->
+<!--                            android:text="Forgot Password"-->
+<!--                            android:textAllCaps="false"-->
+<!--                            android:textColor="@color/red" />-->
+
+                        <TextView
+                            android:id="@+id/signUp_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:gravity="center"
+                            android:text="@string/signUp_text"
+                            android:textColor="@color/primaryTextColor"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/tv_register"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:gravity="center"
+                            android:text="@string/policy"
+                            android:textColor="@color/hyperlink_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            />
+
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>
+
+
+
+
+
+
+
+
+
+
+
+

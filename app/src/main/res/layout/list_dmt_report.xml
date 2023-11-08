@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.branchx.agent.data.model.DmtReport" />
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="@color/grey_bg"
+        android:layout_marginBottom="4dp"
+        app:contentPadding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_cirlce_white_grey_border"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_rupee_indian"
+                    app:tint="@color/white" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="A/C :  3618506719"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textStyle="bold"
+                        android:text="@{`A/C `+item.accountNumber}"
+                        android:textColor="@color/black" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        tools:text="Akash Kumar Fas"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textSize="12dp"
+                        android:textColor="@color/primaryTextColor"
+                        android:text="Not available"
+                        android:textStyle="normal" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        tools:text="12-11-2017 11:21:23"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:textColor="@color/primaryTextColor"
+                        android:text="@{item.transactionDate}"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/noto_sans_regular"
+                        android:gravity="center"
+                        tools:text="₹ 5000"
+                        android:text="@{`₹ `+item.amount}"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="@string/success"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textSize="12dp"
+                            android:textColor="@color/primaryTextColor"
+                            android:text="@{item.statusMessage}"
+                            />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_content_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                tools:visibility="visible"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Transaction Id" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"                        tools:text="id"
+                        android:text="@{item.transactionId}"
+                      />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Service Name" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="service name"
+                        android:text="@{item.productName}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Operator ID\nUTR Number" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="ref"
+                        android:text="@{item.refOperatorId}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Updated Date" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.modifiedDate}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Current Status" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.currentStatus}"
+                        />
+
+                </LinearLayout>
+
+               <!-- <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ReportListStyleLeft"
+                        android:text="MD Convenience" />
+
+                    <TextView style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/ReportListStyleRight"
+                        tools:text="date"
+                        android:text="@{item.mdConvenience}"
+                        />
+
+                </LinearLayout>-->
+
+             <!--   <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ReportListStyleLeft"
+                        android:text="D. Convenience" />
+
+                    <TextView style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        style="@style/ReportListStyleRight"
+                        tools:text="date"
+                        android:text="@{item.mdConvenience}"
+                        />
+
+                </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Charge" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.rConvenience}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Remitter Number" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.consumerNumber}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Main ID" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.mainID}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Api Txn ID" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.apiTransactionId}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Txn Souce" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.transactionSource}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Transaction Details" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="date"
+                        android:text="@{item.remark}"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        android:text="Message" />
+
+                    <TextView
+                        android:textColor="@color/primaryTextColor"
+                        style="@style/ReportListStyleCenterDot" />
+
+                    <TextView
+                        android:fontFamily="@font/noto_sans_regular"
+                        style="@style/TransactionSummaryStyle"
+                        tools:text="message"
+                        android:text="@{item.apiMessage}"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

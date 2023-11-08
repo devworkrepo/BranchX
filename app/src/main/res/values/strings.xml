@@ -1,0 +1,93 @@
+<resources>
+    <string name="app_name">branchX Agent</string>
+    <string name="splash_name">Welcome To branchX</string>
+
+    <string-array name="country">
+        <item>-Select Country-</item>
+        <item>India</item>
+    </string-array>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="mobile_number">Mobile Number</string>
+    <string name="keep_me_login">Keep Me Login</string>
+    <string name="submit">Submit</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account?Sign up</string>
+    <string name="rooted_device_message">Sorry! your device isn\'t passing My branchX\'s security checks.This may be because your device is rooted,or is running an un certified or custom OS build. As a result, My branchX can\'t confirm that device meets MicroBank\'s security standards.</string>
+    <string name="rooted_device_title">App can\'t run, this is rooted device</string>
+    <string name="go_back">Go Back</string>
+    <string name="exit_from_the_app">Exit From The App</string>
+    <string name="no_internet_message">App is enable to access your network connection, make sure your device has sufficient connection</string>
+    <string name="please_check_transaction_report">Please Check Transaction Report</string>
+    <string name="transaction_error_message">Your transaction done with unknown response, please check report for status(may be success, failed, or not happened yet)</string>
+    <string name="password">Password</string>
+    <string name="connection_type">Connection Type</string>
+    <string name="providers">Providers</string>
+    <string name="recharge">Recharge</string>
+    <string name="amount">Amount</string>
+    <string name="required">Required*</string>
+    <string name="fetch_bill">Fetch Bill</string>
+    <string name="biller_number">Biller Number</string>
+    <string name="ero_number">Ero Number</string>
+    <string name="customer_name">Customer Name</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="email_id">Email Id</string>
+    <string name="make_payment">Make Payment</string>
+    <string name="bill_date">Bill Date</string>
+    <string name="bill_period">Bill Period</string>
+    <string name="customer_mobile_number">Customer Mobile Number</string>
+    <string name="ca_number">CA Number</string>
+    <string name="double_zero">0.0</string>
+    <string name="bill_pay">Bill Pay</string>
+    <string name="loading">Loading</string>
+    <string name="dmt_one">DMT</string>
+    <string name="server_timeout_try_again">Server timeout! try again</string>
+    <string name="beneficiary">Beneficiary</string>
+    <string name="money_transfer">Money Transfer</string>
+
+    <string name="success">Success</string>
+    <string name="some_transaction_are_success">Some transactions are success</string>
+    <string name="failure">Failure</string>
+    <string name="pending">Pending</string>
+    <string name="in_process">In-Process</string>
+
+
+    <string name="app_update_msg">Please restart the app to update</string>
+    <string name="restart">Restart</string>
+    <string name="title_activity_aeps">AepsActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password_rules">"Password rules : "</string>
+    <string name="proceed">Proceed</string>
+    <string name="login_to_branchx">Login to branchX</string>
+    <string name="enter_email_address_or_username">Enter Email Address or Username</string>
+    <string name="need_help">Need help?</string>
+    <string name="forget_password">Forgot password?</string>
+    <string name="please_enter_otp">Please enter OTP</string>
+    <string name="continuee">Continue</string>
+    <string name="didn_t_receive_otp_resend_otp">Didn\'t receive OTP? <font color='#80A0FF'>  Resend OTP</font></string>
+    <string name="please_set_your_password">Please set your password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="mobile">Mobile</string>
+    <string name="email">Email</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="send_otp">Send OTP</string>
+    <string name="please_enter_password">Please enter password</string>
+    <string name="email_address_or_username">Email Address or Username</string>
+    <string name="login">Login</string>
+    <string name="todo">TODO</string>
+    <string name="policy"><u>By signing in, you agree to branchX policy</u></string>
+    <string name="available_balance">Available Balance</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="signUp_text">Don\'t have an account? Sign Up</string>
+
+
+</resources>

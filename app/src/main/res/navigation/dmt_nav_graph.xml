@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dmt_nav_graph"
+    app:startDestination="@id/senderSearchFragment">
+
+
+    <fragment
+        android:id="@+id/senderSearchFragment"
+        android:name="com.branchx.agent.ui.fragment.dmt.SenderSearchFragment"
+        tools:layout="@layout/fragment_sender_search"
+        android:label="Search Sender" >
+        <action
+            android:id="@+id/action_senderSearchFragment_to_beneficiaryListFragment"
+            app:destination="@id/beneficiaryListFragment" />
+        <action
+            android:id="@+id/action_senderSearchFragment_to_registerSenderFragment"
+            app:destination="@id/registerSenderFragment" />
+        <action
+            android:id="@+id/action_senderSearchFragment_to_registerSenderOtpFragment"
+            app:destination="@id/registerSenderOtpFragment" />
+        <argument android:name="senderMobileNumber"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument android:name="dmt_type"
+            app:argType="com.branchx.agent.helper.enum.DmtType"
+           />
+        <argument android:name="first_name"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument android:name="last_name"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <argument android:name="monthly_limit"
+            app:argType="string"
+            android:defaultValue="" />
+
+    </fragment>
+    <argument android:name="dmt_type"
+        app:argType="com.branchx.agent.helper.enum.DmtType"/>
+
+    <fragment
+        android:id="@+id/beneficiaryListFragment"
+        android:name="com.branchx.agent.ui.fragment.dmt.BeneficiaryListFragment"
+        tools:layout="@layout/fragment_beneficiary_list"
+        android:label="Beneficiary List">
+
+        <argument android:name="dmt_type"
+            app:argType="com.branchx.agent.helper.enum.DmtType"/>
+
+        <argument android:name="senderInfo"
+            app:argType="com.branchx.agent.data.model.SenderInfo"/>
+        <argument android:name="first_name"
+            app:argType="string"/>
+
+        <argument android:name="last_name"
+            app:argType="string"/>
+
+        <argument android:name="monthly_limit"
+            app:argType="string"/>
+
+
+
+
+        <action
+            android:id="@+id/action_beneficiaryListFragment_to_addBeneficiaryFragment"
+            app:destination="@id/addBeneficiaryFragment" />
+        <action
+            android:id="@+id/action_beneficiaryListFragment_to_moneyTransactionFragment"
+            app:destination="@id/moneyTransactionFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/addBeneficiaryFragment"
+        android:name="com.branchx.agent.ui.fragment.dmt.AddBeneficiaryFragment"
+        tools:layout="@layout/fragment_add_beneficiary"
+        android:label="Add Beneficiary">
+
+        <argument android:name="dmt_type"
+            app:argType="com.branchx.agent.helper.enum.DmtType"/>
+        <argument android:name="sender_name"
+            app:argType="string"/>
+        <argument android:name="sender_mobile"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registerSenderFragment"
+        tools:layout="@layout/fragment_sender_register"
+        android:name="com.branchx.agent.ui.fragment.dmt.RegisterSenderFragment"
+        android:label="Register Sender" >
+
+        <argument android:name="dmt_type"
+            app:argType="com.branchx.agent.helper.enum.DmtType"/>
+        <argument android:name="sender_mobile"
+            app:argType="string"/>
+        <argument android:name="first_name"
+            app:argType="string"/>
+        <argument android:name="last_name"
+            app:argType="string"/>
+        <action
+            app:popUpTo="@+id/registerSenderFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_registerSenderFragment_to_registerSenderOtpFragment"
+            app:destination="@id/registerSenderOtpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerSenderOtpFragment"
+        tools:layout="@layout/fragment_sender_register_otp"
+        android:name="com.branchx.agent.ui.fragment.dmt.RegisterSenderOtpFragment"
+        android:label="Register Sender Otp" >
+
+        <argument android:name="dmt_type"
+            app:argType="com.branchx.agent.helper.enum.DmtType"/>
+        <argument android:name="response_message"
+            app:argType="string"/>
+        <argument android:name="sender_mobile"
+            app:argType="string"/>
+
+        <argument android:name="first_name"
+            app:argType="string"/>
+        <argument android:name="last_name"
+            app:argType="string"/>
+        <action
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/dmt_nav_graph"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_registerSenderOtpFragment_to_senderSearchFragment"
+            app:destination="@id/senderSearchFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/moneyTransactionFragment"
+        tools:layout="@layout/fragment_money_transaction"
+        android:name="com.branchx.agent.ui.fragment.dmt.MoneyTransactionFragment"
+        android:label="Money Transaction" >
+
+        <argument android:name="dmt_type"
+            app:argType="com.branchx.agent.helper.enum.DmtType"/>
+        <argument android:name="strAmount"
+            app:argType="string"/>
+        <argument android:name="senderInfo"
+            app:argType="com.branchx.agent.data.model.SenderInfo"/>
+        <argument android:name="beneficiaryInfo"
+            app:argType="com.branchx.agent.data.model.BeneficiaryInfo"/>
+        <action
+            android:id="@+id/action_moneyTransactionFragment_to_moneyTransactionResponseFragment"
+            app:destination="@id/moneyTransactionResponseFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/moneyTransactionResponseFragment"
+        android:name="com.branchx.agent.ui.fragment.dmt.MoneyTransactionResponseFragment"
+        android:label="MoneyTransactionResponseFragment"
+        tools:layout="@layout/fragment_money_transaction_response">
+
+
+        <argument android:name="transaction_response"
+            app:argType="com.branchx.agent.data.response.DmtTransactionResponse"/>
+        <argument android:name="beneficiary_info"
+            app:argType="com.branchx.agent.data.model.BeneficiaryInfo"/>
+        <argument android:name="sender_info"
+            app:argType="com.branchx.agent.data.model.SenderInfo"/>
+        <argument android:name="amount"
+            app:argType="string"/>
+
+    </fragment>
+
+
+</navigation>

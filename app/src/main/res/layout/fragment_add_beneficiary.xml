@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.branchx.agent.ui.viewmodel.dmt.AddBeneficiaryViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/custom_toolbar1"
+            android:id="@+id/toolbar"/>
+
+        <ScrollView
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolbar"
+            android:isScrollContainer="true"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grey_bg"
+                android:padding="16dp">
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:layout_marginTop="8dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:text="Add Beneficiary" />
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:text="Sender Number" />
+
+                <EditText
+                    android:id="@+id/ed_sender_mobile_number"
+                    style="@style/EditTextPrimary"
+                    android:enabled="false"
+                    android:inputType="number"
+                    android:paddingStart="4dp"
+                    android:background="@drawable/rounded_background"
+                    android:maxLength="10"
+                    android:text="@={viewModel.senderMobileNumber}" />
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:text="Sender Name" />
+
+                <EditText
+                    android:id="@+id/ed_sender_name"
+                    style="@style/EditTextPrimary"
+                    android:enabled="false"
+                    android:paddingStart="4dp"
+                    android:background="@drawable/rounded_background"
+                    android:inputType="number"
+                    android:maxLength="25"
+                    android:text="@={viewModel.senderName}" />
+
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:layout_marginTop="16dp"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:text="Bank Name" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_select_bank"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_bank_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:hint="@string/required"
+                        android:paddingStart="4dp"
+                        android:background="@drawable/rounded_background"
+                        android:textColor="@color/text_color_2"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:layout_marginTop="16dp"
+                    android:textSize="12dp"
+                    android:paddingStart="4dp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:text="IFSC Code" />
+
+                <EditText
+                    android:id="@+id/ed_ifsc_code"
+                    style="@style/EditTextPrimary"
+                    android:layout_weight="1"
+                    android:paddingStart="4dp"
+                    android:background="@drawable/rounded_background"
+                    android:hint="Required*"
+                    android:maxLength="12"
+                    android:text="@={viewModel.ifscCode}" />
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:layout_marginTop="16dp"
+                    android:text="Account Number" />
+
+                <EditText
+                    android:id="@+id/ed_account_number"
+                    style="@style/EditTextPrimary"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:layout_width="match_parent"
+                    android:hint="Required*"
+                    android:paddingStart="4dp"
+                    android:maxLength="20"
+                    android:background="@drawable/rounded_background"
+                    android:inputType="text"
+                    android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:text="@={viewModel.accountNumber}" />
+
+
+                <RadioButton
+                    android:id="@+id/btn_add_beneficiary_verify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:onClick="@{viewModel::onBeneficiaryVerifyAddButtonClick}"
+                    android:text="Verify Beneficiary"
+                    />
+
+
+                <TextView
+                    style="@style/TextViewInputHeader"
+                    android:textSize="12dp"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:layout_marginTop="16dp"
+                    android:text="Beneficiary Name" />
+
+                <EditText
+                    android:id="@+id/ed_beneficiary_name"
+                    style="@style/EditTextPrimary"
+                    android:paddingStart="4dp"
+                    android:background="@drawable/rounded_background"
+                    android:hint="Required*"
+                    android:maxLength="25"
+                    android:text="@={viewModel.beneficiaryName}" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_error_message"
+                    style="@style/ValidationErrorStyle"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:text="@{viewModel.errMessageObs}"
+                    android:visibility="@{viewModel.errMessageObs == `` ? View.GONE : View.VISIBLE}" />
+
+                <Button
+                    android:id="@+id/btn_add_beneficiary"
+                    style="@style/ButtonPrimary"
+                    android:textSize="12dp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/button_bg"
+                    android:background="@drawable/rounded_background"
+                    android:fontFamily="@font/noto_sans_regular"
+                    android:layout_marginTop="16dp"
+                    android:onClick="@{viewModel::onBeneficiaryAddButtonClick}"
+                    android:text="Add Beneficiary" />
+
+
+<!--                <Button-->
+<!--                    android:id="@+id/btn_add_beneficiary_verify"-->
+<!--                    style="@style/ButtonPrimary"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:textSize="12dp"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:backgroundTint="@color/button_bg"-->
+<!--                    android:background="@drawable/rounded_background"-->
+<!--                    android:fontFamily="@font/noto_sans_regular"-->
+<!--                    android:onClick="@{viewModel::onBeneficiaryVerifyAddButtonClick}"-->
+<!--                    android:text="Verify Add Beneficiary" />-->
+
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/layout_progress"
+            layout="@layout/circular_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+
+</layout>

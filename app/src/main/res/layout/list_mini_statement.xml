@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="miniStatement"
+            type="com.branchx.agent.data.model.MiniStatement" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="@drawable/rounded_background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:gravity="left"
+                android:layout_height="wrap_content"
+                tools:text="03-06"
+                android:textColor="@color/primaryTextColor"
+                android:fontFamily="@font/noto_sans_regular"
+                android:text="@{miniStatement.date}"
+                android:textStyle="bold"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                tools:text="narrations"
+                android:textColor="@color/primaryTextColor"
+                android:fontFamily="@font/noto_sans_regular"
+                android:text="@{miniStatement.narration}"
+                android:textSize="12sp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:id="@+id/tv_narration" />
+
+            <TextView
+                android:id="@+id/tv_txnType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Txn Type"
+                android:text="@{miniStatement.txnType}"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/primaryTextColor"
+                android:fontFamily="@font/noto_sans_regular"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="wrap_content"
+                tools:text="0.00"
+                android:textColor="@color/primaryTextColor"
+                android:fontFamily="@font/noto_sans_regular"
+                android:text="@{miniStatement.amount}"
+                android:gravity="right"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+
+
+
+        </LinearLayout>
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:background="#DFDADA"-->
+<!--            android:layout_marginTop="5dp"/>-->
+
+    </LinearLayout>
+</layout>

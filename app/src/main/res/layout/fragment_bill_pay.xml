@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.branchx.agent.ui.viewmodel.bill_recharge.BillPayViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+
+        <ScrollView
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:background="@color/grey_bg"
+            android:backgroundTint="@color/grey_bg"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/grey_bg"
+                android:backgroundTint="@color/grey_bg"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="16dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:contentPadding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available Balance"
+                            android:textSize="16dp"
+                            android:fontFamily="@font/noto_sans_regular"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/wallet"
+                                app:tint="@color/button_bg">
+
+                            </ImageView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:text="(Wallet)  :"
+                                android:textSize="14dp"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/green_color"
+                                android:textStyle="bold">
+
+                            </TextView>
+
+                            <TextView
+                                android:id="@+id/tv_wallet_balance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/button_bg"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:text="5900">
+
+                            </TextView>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:backgroundTint="@color/grey_bg"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:elevation="5dp"
+                    app:cardElevation="5dp"
+                    app:contentPadding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            style="@style/TitleTextStyle"
+                            android:layout_marginTop="16dp"
+                            android:padding="0dp"
+                            android:fontFamily="@font/noto_sans_regular"
+                            tools:text="ULLP" />
+
+                        <TextView
+                            android:id="@+id/tv_sub_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/primaryTextColor"
+                            android:fontFamily="@font/noto_sans_regular"
+                            tools:text="Electricity" />
+
+                        <TextView
+                            android:id="@+id/tv_ca_bill_number"
+                            style="@style/TextViewInputHeader"
+                            android:text="@string/ca_number" />
+
+                        <EditText
+                            android:id="@+id/ed_bill_number"
+                            style="@style/EditTextPrimary"
+                            android:layout_weight="1"
+                            android:hint="@string/required"
+                            android:maxLength="15"
+                            android:background="@drawable/rounded_background"
+                            android:text="@={viewModel.caOrBillNumber}" />
+
+
+                        <TextView
+                            style="@style/TextViewInputHeader"
+                            android:text="@string/customer_mobile_number" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:background="@drawable/rounded_background"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/ed_customer_mobile_number"
+                                style="@style/EditTextPrimary"
+                                android:layout_weight="1"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/required"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:text="@={viewModel.mobileNumber}" />
+
+                            <Button
+                                android:id="@+id/btn_fetch_bill"
+                                style="@style/ButtonPrimary"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="8dp"
+                                android:textColor="@color/white"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/rounded_background"
+                                android:onClick="@{viewModel.fetchBillInfo}"
+                                android:text="@string/fetch_bill" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_payment_field_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextViewInputHeader"
+                                android:text="@string/amount" />
+
+                            <EditText
+                                android:id="@+id/ed_amount"
+                                style="@style/EditTextPrimaryAmount"
+                                android:layout_height="60dp"
+                                android:enabled="false"
+                                android:focusable="false"
+                                android:hint="@string/double_zero"
+                                android:background="@drawable/rounded_background"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:text="@={viewModel.amount}"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+
+                            <LinearLayout
+                                android:id="@+id/ll_ero_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                tools:visibility="visible">
+
+                                <TextView
+                                    style="@style/TextViewInputHeader"
+                                    android:text="@string/ero_number" />
+
+                                <EditText
+                                    android:id="@+id/ed_ero_number"
+                                    style="@style/EditTextPrimary"
+                                    android:hint="@string/required"
+                                    android:background="@drawable/rounded_background"
+                                    android:text="@={viewModel.eroNumber}" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_fetch_detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:elevation="5dp"
+                    app:cardElevation="5dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:contentPadding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:text="@string/biller_number"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="  :  " />
+
+
+                            <TextView
+                                android:id="@+id/tv_bill_number"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="---"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:textSize="14sp"
+                                />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:text="Due Date"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:textSize="14sp"
+                                 />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="  :  " />
+
+
+                            <TextView
+                                android:id="@+id/tv_due_date"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="---"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:textSize="14sp"
+                                />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.7"
+                                android:text="Consumer Name"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="  :  " />
+
+
+                            <TextView
+                                android:id="@+id/tv_consumer_name"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="---"
+                                android:fontFamily="@font/noto_sans_regular"
+                                android:textColor="@color/primaryTextColor"
+                                android:textSize="14sp"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_error_message"
+                    style="@style/ValidationErrorStyle"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@{viewModel.errMessageObs}"
+                    android:visibility="@{viewModel.errMessageObs == `` ? View.GONE : View.VISIBLE}" />
+
+                <Button
+                    android:id="@+id/btn_make_payment"
+                    style="@style/ButtonPrimary"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="16dp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="18dp"
+                    android:backgroundTint="@color/button_bg"
+                    android:background="@drawable/rounded_background"
+                    android:onClick="@{viewModel::makePayment}"
+                    android:text="@string/make_payment" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/layout_progress"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            layout="@layout/circular_progress2"/>
+    </RelativeLayout>
+</layout>

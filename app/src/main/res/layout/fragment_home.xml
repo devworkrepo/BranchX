@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:scrollbarSize="0dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_bg"
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/button_bg"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_wallet"
+                                    app:tint="@color/white">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="24dp"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:text="(MAIN)  :"
+                                    android:textColor="@color/green_color"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/tv_main_balance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="normal"
+                                    tools:text="10,000">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+
+                                    android:src="@drawable/ic_fingerprint"
+                                    app:tint="@color/white">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:text="(AEPS)  :"
+                                    android:textColor="@color/green_color"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/tv_aeps_balance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="normal"
+                                    tools:text="5900">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+
+                                    android:src="@drawable/atm"
+                                    app:tint="@color/white">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:layout_marginEnd="4dp"
+                                    android:text="(MATM) :"
+                                    android:textColor="@color/green_color"
+                                    android:textStyle="bold">
+
+                                </TextView>
+
+                                <TextView
+                                    android:id="@+id/tv_matm_balance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:maxLines="1"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="normal"
+                                    tools:text="5900">
+
+                                </TextView>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/white" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:id="@+id/btn_refresh_balance"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableStart="@drawable/ic_baseline_refresh_24"
+                                android:drawablePadding="8dp"
+                                android:gravity="center"
+                                android:text="Refresh Balance"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:background="@color/white" />
+
+                        <LinearLayout
+                            android:id="@+id/btn_top_up"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawableStart="@drawable/ic_add"
+                                android:drawablePadding="8dp"
+                                android:gravity="center"
+                                android:text="Fund Request"
+                                android:textColor="@color/white"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:cardCornerRadius="5dp"
+                    app:contentPadding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/ic_baseline_notifications_active_24"
+                            app:tint="@color/darkRed" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_notification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:lineHeight="22sp"
+                                android:maxLines="2"
+                                android:text="1. Hello dev \n2. How are you:)"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:cardCornerRadius="5dp"
+                    app:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DashboardTitle"
+                            android:text="Services" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_dmt_1"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/dmt" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="DMT" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/cv_aeps"
+                                style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="5dp"
+                                    app:neumorph_shadowElevation="5sp">
+
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/aeps" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="AEPS" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/cv_aadhaar_pay"
+                                style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="5dp"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/aadhaar" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Aadhaar Pay" />
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_matm"
+                                style="@style/DashBoardItemLinearLayout"
+                                android:visibility="visible">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/ncv_matm"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="10dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="35dp"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/matm" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="MATM"
+                                    app:layout_constraintEnd_toEndOf="@+id/ncv_matm"
+                                    app:layout_constraintStart_toStartOf="@+id/ncv_matm"
+                                    app:layout_constraintTop_toBottomOf="@+id/ncv_matm" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cl_neo_banking"
+                                style="@style/DashBoardItemLinearLayout"
+                                android:visibility="visible">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/ncv_neo_banking"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="10dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="35dp"
+                                        android:layout_height="35dp"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/ic_neobanking" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Neo Banking"
+                                    app:layout_constraintEnd_toEndOf="@+id/ncv_neo_banking"
+                                    app:layout_constraintStart_toStartOf="@+id/ncv_neo_banking"
+                                    app:layout_constraintTop_toBottomOf="@+id/ncv_neo_banking" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="vertical">
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:cardCornerRadius="5dp"
+                    app:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DashboardTitle"
+                            android:text="Recharge" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_prepaid"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/prepaid" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Prepaid" />
+                            </LinearLayout>
+
+                            <LinearLayout
+
+                                style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_dth"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/dth" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="DTH" />
+                            </LinearLayout>
+
+                            <!--                            <LinearLayout style="@style/DashBoardItemLinearLayout">-->
+
+                            <!--                                <com.google.android.material.card.MaterialCardView-->
+                            <!--                                    android:id="@+id/cv_postpaid"-->
+                            <!--                                    style="@style/DashBoardItemCardView"-->
+                            <!--                                    app:contentPadding="5dp">-->
+
+                            <!--                                    <ImageView-->
+                            <!--                                        style="@style/DashBoardItemImageView"-->
+                            <!--                                        android:src="@drawable/ic_launcher_mobile"-->
+                            <!--                                        app:tint="@color/purple_500" />-->
+
+                            <!--                                </com.google.android.material.card.MaterialCardView>-->
+
+                            <!--                                <TextView-->
+                            <!--                                    style="@style/DashBoardItemTitle"-->
+                            <!--                                    android:text="Postpaid" />-->
+                            <!--                            </LinearLayout>-->
+
+                            <LinearLayout
+                                style="@style/DashBoardItemLinearLayout"
+                                android:visibility="invisible">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    style="@style/DashBoardItemCardView"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/dth" />
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/grey_bg"
+                    app:cardCornerRadius="5dp"
+                    app:contentPadding="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DashboardTitle"
+                            android:text="Bill Payment (BBPS)" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_postpaid"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/postpaid" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Postpaid" />
+                            </LinearLayout>
+
+
+                            <LinearLayout style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_electricity"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/electricity" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Electricity" />
+                            </LinearLayout>
+
+                            <LinearLayout style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_broadband"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/broadband" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Broadband" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_gas"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/gas" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Gas" />
+                            </LinearLayout>
+
+                            <LinearLayout style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_water"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/water" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Water" />
+                            </LinearLayout>
+
+                            <LinearLayout
+
+                                style="@style/DashBoardItemLinearLayout">
+
+                                <soup.neumorphism.NeumorphCardView
+                                    android:id="@+id/cv_land_line"
+                                    android:layout_width="110dp"
+                                    android:layout_height="110dp"
+                                    android:layout_weight="1"
+                                    app:neumorph_shadowElevation="5sp">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="20sp"
+                                        android:backgroundTint="@color/button_bg"
+                                        android:contentDescription="@string/todo"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/landline" />
+
+                                </soup.neumorphism.NeumorphCardView>
+
+                                <TextView
+                                    style="@style/DashBoardItemTitle"
+                                    android:text="Landline" />
+                            </LinearLayout>
+
+                            <!--                            <LinearLayout-->
+                            <!--                                style="@style/DashBoardItemLinearLayout"-->
+                            <!--                                android:visibility="invisible">-->
+
+                            <!--                                <com.google.android.material.card.MaterialCardView style="@style/DashBoardItemCardView">-->
+
+                            <!--                                    <ImageView-->
+                            <!--                                        style="@style/DashBoardItemImageView"-->
+                            <!--                                        android:src="@drawable/ic_launcher_nmoney"-->
+                            <!--                                        app:tint="@color/purple_700" />-->
+                            <!--                                </com.google.android.material.card.MaterialCardView>-->
+
+                            <!--                                <TextView-->
+                            <!--                                    style="@style/DashBoardItemTitle"-->
+                            <!--                                    android:text="" />-->
+                            <!--                            </LinearLayout>-->
+
+                            <!--                            <LinearLayout-->
+                            <!--                                style="@style/DashBoardItemLinearLayout"-->
+                            <!--                                android:visibility="invisible">-->
+
+                            <!--                                <com.google.android.material.card.MaterialCardView style="@style/DashBoardItemCardView">-->
+
+                            <!--                                    <ImageView-->
+                            <!--                                        style="@style/DashBoardItemImageView"-->
+                            <!--                                        android:src="@drawable/ic_launcher_nmoney"-->
+                            <!--                                        app:tint="@color/purple_700" />-->
+                            <!--                                </com.google.android.material.card.MaterialCardView>-->
+
+                            <!--                                <TextView-->
+                            <!--                                    style="@style/DashBoardItemTitle"-->
+                            <!--                                    android:text="" />-->
+                            <!--                            </LinearLayout>-->
+
+                            <!--                            <LinearLayout-->
+                            <!--                                style="@style/DashBoardItemLinearLayout"-->
+                            <!--                                android:visibility="invisible">-->
+
+                            <!--                                <com.google.android.material.card.MaterialCardView style="@style/DashBoardItemCardView">-->
+
+                            <!--                                    <ImageView-->
+                            <!--                                        style="@style/DashBoardItemImageView"-->
+                            <!--                                        android:src="@drawable/ic_launcher_nmoney"-->
+                            <!--                                        app:tint="@color/purple_700" />-->
+                            <!--                                </com.google.android.material.card.MaterialCardView>-->
+
+                            <!--                                <TextView-->
+                            <!--                                    style="@style/DashBoardItemTitle"-->
+                            <!--                                    android:text="" />-->
+                            <!--                            </LinearLayout>-->
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>

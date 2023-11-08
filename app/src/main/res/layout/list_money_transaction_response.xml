@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="moneyTransaction"
+            type="com.branchx.agent.data.model.DmtTransaction" />
+    </data>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:background="@color/grey_bg"
+      >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="4dp"
+          android:orientation="horizontal">
+
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:gravity="left"
+              android:textColor="@color/button_bg"
+              tools:text="GST"
+              android:textStyle="bold"
+              android:text="@{String.valueOf(moneyTransaction.gst)}"
+              android:textSize="12sp" />
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:gravity="center"
+              android:textColor="@color/button_bg"
+              tools:text="Charges"
+              android:textStyle="bold"
+              android:text="@{String.valueOf(moneyTransaction.charges)}"
+              android:textSize="12sp" />
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:gravity="center"
+              android:textColor="@color/button_bg"
+              tools:text="Amount"
+              android:textStyle="bold"
+              android:text="@{String.valueOf(moneyTransaction.transactionAmount)}"
+              android:textSize="12sp" />
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:gravity="right"
+              android:textColor="@color/purple_200"
+              tools:text="Status"
+
+              android:textStyle="bold"
+              setTransactionStatus="@{moneyTransaction.status}"
+              android:textSize="12sp" />
+
+
+      </LinearLayout>
+      <TextView
+          android:layout_height="wrap_content"
+          android:layout_width="match_parent"
+          android:gravity="left"
+          android:textColor="@color/black10"
+          tools:text="remarks"
+          android:fontFamily="@font/noto_sans_regular"
+          android:padding="4dp"
+          android:text="@{moneyTransaction.message + ` - `+moneyTransaction.refNumber}"
+          android:textSize="12sp" />
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:layout_marginTop="4dp"
+          android:background="#BAB7B7" />
+  </LinearLayout>
+
+</layout>

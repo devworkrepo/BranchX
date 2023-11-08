@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/grey_bg">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        app:cardElevation="4dp"
+        app:contentPadding="5dp"
+        app:cardCornerRadius="4dp"
+        android:backgroundTint="@color/grey_bg">
+
+
+        <EditText
+            android:inputType="number"
+            android:maxLength="10"
+            android:background="@drawable/rounded_background"
+            style="@style/EditTextPrimary"
+            />
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
